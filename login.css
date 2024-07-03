@@ -53,6 +53,5 @@ body {
 
 .button-container button:hover {
     background-color: #454242;
-    font-family: 'Courier New', Courier, monospace; 
-    font-weight: normal; 
+    
 }
