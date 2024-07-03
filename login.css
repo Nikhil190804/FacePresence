@@ -52,7 +52,7 @@ body {
 }
 
 .button-container button:hover {
-    background-color: #000000;
-    font-family: 'Courier New', Courier, monospace; 
-
+    background-color: #454242;
+    font-family: 'Courier New', Courier, monospace; /* Change the font family on hover */
+    font-weight: normal; /* Make the text less bold on hover */
 }
