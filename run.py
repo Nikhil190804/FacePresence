@@ -7,7 +7,6 @@ app = Flask(__name__,template_folder='app/templates', static_folder='app/static'
 # which tells the application which URL should call 
 # the associated function.
 @app.route('/')
-# ‘/’ URL is bound with hello_world() function.
 def hello_world():
     return render_template("./login.html")
 
