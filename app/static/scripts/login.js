@@ -3,10 +3,10 @@ document.getElementById('adminLogin').addEventListener('click', function() {
 });
 
 document.getElementById('customerLogin').addEventListener('click', function() {
-    login('customer');
+    login('student');
 });
 
-function login(role) {
+async function login(role) {
     const username = document.getElementById('username').value;
     const pass = document.getElementById('pass').value;
     
@@ -15,9 +15,19 @@ function login(role) {
         console.log(`Username: ${username}`);
         console.log(`Password: ${pass}`);
         if (role === 'admin') {
-            window.location.href = 'admin_dashboard.html';
-        } else if (role === 'customer') {
-            window.location.href = 'customer_dashboard.html'; 
+            response = await fetch("/login-admin",{
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json",},
+                body:JSON.stringify({"username":username,"password":pass})
+            });
+        } else if (role === 'student') {
+            response = await fetch("/login-student",{
+                method:"POST",
+                headers: {
+                    "Content-Type": "application/json",},
+                body:JSON.stringify({"email":username,"password":pass})
+            });
         }
     } else {
         alert('Please enter both username and password.');
