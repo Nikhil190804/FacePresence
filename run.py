@@ -1,3 +1,4 @@
+
 from flask import Flask,render_template,request,jsonify
 import app.databaseConnection as dbconnect
 
@@ -14,8 +15,8 @@ cursor = connection.cursor()
 
 
 @app.route('/')
-def hello_world():
-    return render_template("./login.html")
+def login():
+    return render_template('login.html')
 
 #route for login as admin it checks the validity of admin and then sends the desired response
 @app.route('/login-admin',methods=["POST"])

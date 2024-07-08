@@ -1,20 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: rgb(148, 178, 191);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
+    width: 100vw;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .login-container {
-    background-color: #fff;
-    padding: 50px;
+    width: 20%;
+    height: 60%;
+    background-color: rgb(145, 141, 141);
+    padding: 45px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    width: 300px;
     text-align: center;
+}
+.attendence-button{
+    width: 15rem;
+    height: 3.5rem;
+    background-color: rgb(30, 54, 81);
+    font-family: sans-serif;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    border: none;
+    border-radius: 0.5rem;
 }
 
 .login-container h2 {
