@@ -29,6 +29,14 @@ async function login(role) {
                 body:JSON.stringify({"email":username,"password":pass})
             });
         }
+
+        const result = await response.json();
+
+        if (result.status === 200) {
+            window.location.href = '/admin-login';
+        } else {
+            alert('Login Failed: ' + result.message);
+        }
     } else {
         alert('Please enter both username and password.');
     }
