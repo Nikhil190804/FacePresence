@@ -1,4 +1,5 @@
 
+import bcrypt
 from flask import Flask,render_template,request,jsonify
 import app.databaseConnection as dbconnect
 
@@ -40,7 +41,9 @@ def loginAdmin():
         }
         return jsonify(response)
 
-
+@app.route('/admin-login')
+def renderAdmin():
+    return render_template('admin.html')
 
 #route for login as student it checks the validity of student and then sends the desired response
 @app.route('/login-student',methods=["POST"])
@@ -52,7 +55,7 @@ def loginStudent():
     cursor.execute(f"Select * from students where email='{username}'")
     queryResult = cursor.fetchone()
     print(queryResult)
-    if(queryResult==() or queryResult==None):
+    if(queryResult==()):
         response = {
         'status': 400,
         'message': 'Wrong Credentials'
@@ -72,6 +75,22 @@ def loginStudent():
                                         'message': 'Login Success'
                                         }
         """
+        bytes = password.encode('utf-8') 
+        # generating the salt 
+        salt = bcrypt.gensalt() 
+        # Hashing the password 
+        hash = bcrypt.hashpw(bytes, salt) 
+        if bcrypt.checkpw(hash, hashedPassword.encode('utf-8')):
+            response = {
+                'status': 200,
+                'message': 'Login Success'
+            }
+        else:
+            response = {
+                'status': 400,
+                'message': 'Wrong Credentials'
+            }
+        
         return jsonify(response)
 
 
