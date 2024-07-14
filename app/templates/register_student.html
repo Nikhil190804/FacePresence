@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/styles/register_student.css">
+    
+</head>
+<body>
+    <div class="content-container">
+        <div class="register-student-box">
+            <h1>Register Student</h1>
+            <form>
+                <input type="text" name="student_first_name" placeholder="Student First Name">
+                <input type="text" name="student_last_name" placeholder="Student Last Name">
+                <input type="text" name="student_email" placeholder="Student Email">
+                <input type="text" name="student_phone" placeholder="Student Phone">
+                <input type="text" name="student_password" placeholder="Student Password">
+                <input type="text" name="student_dob" placeholder="Date of Birth">
+                <div class="submit-student-details">
+                    <input type="submit" value="Register New Student">
+                </div>
+            </form>
+        </div>
+        <div class="Capture-student-face">
+            <h1>Capture Student Face</h1>
+            <video id="video" style="width: 320px; height: 240px;"></video>
+            <canvas id="canvasElement" style="display:none;"></canvas> 
+            <div class="Capture-face-buttons">
+                <button id="capture">Capture</button>
+                <button id="save">Save</button>
+            </div>
+        </div>
+    </div>
+    <!-- image preview code using span -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="imagePreview" alt="Captured Image Preview">
+        </div>
+    </div>
+    <script src="../static/scripts/register_student.js"></script>
+</body>
+</html>

@@ -45,7 +45,17 @@ def loginAdmin():
 def renderAdmin():
     return render_template('admin.html')
 
-#route for login as student it checks the validity of student and then sends the desired response
+@app.route('/register-student')
+def renderRegisterStudent():
+    return render_template('register_student.html')
+
+# add student to database 
+@app.route('/student-register')
+def registerStudent():
+    print("Registering Student")
+    
+    
+
 @app.route('/login-student',methods=["POST"])
 def loginStudent():
     data = request.get_json()

@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(148, 178, 191);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.content-container {
+    display: flex;
+    justify-content: space-around; 
+    width: 90%; 
+    max-width: 1200px; 
+    margin: auto; 
+}
+
+.register-student-box, .Capture-student-face {
+    flex: 1; 
+    margin: 10px; 
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px; 
+}
+
+
+.register-student-box input[type="text"], .submit-button input[type="submit"], .Capture-face-buttons button {
+    width: calc(100% - 20px); 
+    margin: 10px 0; 
+}
+.submit-button input[type="submit"] {
+    width: 90%;
+    padding: 15px;
+    background-color: rgb(30, 54, 81);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.Capture-student-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Capture-face-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adjust the gap between buttons as needed */
+}
+
+.Capture-face-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: rgb(30, 54, 81);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; 
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; 
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

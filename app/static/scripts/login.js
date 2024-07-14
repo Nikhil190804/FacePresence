@@ -7,8 +7,7 @@ document.getElementById('customerLogin').addEventListener('click', function() {
 });
 
 async function login(role) {
-    const username = document.getElementById('username').value;
-    const pass = document.getElementById('pass').value;
+    n
     
     if (username && pass) {
         console.log(`Logging in as ${role}:`);
