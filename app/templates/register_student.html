@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../static/styles/register_student.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/register_student.css') }}">
     
 </head>
 <body>
@@ -12,20 +12,21 @@
         <div class="register-student-box">
             <h1>Register Student</h1>
             <form>
-                <input type="text" name="student_first_name" placeholder="Student First Name">
-                <input type="text" name="student_last_name" placeholder="Student Last Name">
-                <input type="text" name="student_email" placeholder="Student Email">
-                <input type="text" name="student_phone" placeholder="Student Phone">
-                <input type="text" name="student_password" placeholder="Student Password">
-                <input type="text" name="student_dob" placeholder="Date of Birth">
+                <input type="text" name="student_first_name" id="student_first_name" placeholder="Student First Name">
+                <input type="text" name="student_last_name" id="student_last_name"  placeholder="Student Last Name">
+                <input type="text" name="student_email" id="student_email" placeholder="Student Email">
+                <input type="text" name="student_phone" id="student_phone" placeholder="Student Phone">
+                <input type="text" name="student_password" id="student_password" placeholder="Student Password">
+                <input type="text" name="student_dob" id="student_dob" placeholder="Date of Birth">
                 <div class="submit-student-details">
-                    <input type="submit" value="Register New Student">
+                    <input type="submit" value="Register New Student" id="submit-form">
                 </div>
             </form>
         </div>
         <div class="Capture-student-face">
             <h1>Capture Student Face</h1>
             <video id="video" style="width: 320px; height: 240px;"></video>
+            <img src="" alt="captured-image"style="width: 320px; height: 240px; display:none;"  id="captured-image">
             <canvas id="canvasElement" style="display:none;"></canvas> 
             <div class="Capture-face-buttons">
                 <button id="capture">Capture</button>
@@ -40,6 +41,6 @@
             <img id="imagePreview" alt="Captured Image Preview">
         </div>
     </div>
-    <script src="../static/scripts/register_student.js"></script>
+    <script src="{{ url_for('static', filename='scripts/register_student.js') }}"></script>
 </body>
 </html>
