@@ -113,6 +113,10 @@ def loginAdmin():
 def renderAdmin():
     return render_template('admin.html')
 
+@app.route('/student-login')
+def renderStdudent():
+    return render_template('student.html')
+
 @app.route('/register-student')
 def renderRegisterStudent():
     return render_template('register_student.html')
@@ -214,11 +218,8 @@ def loginStudent():
                                         }
         """
         bytes = password.encode('utf-8') 
-        # generating the salt 
-        salt = bcrypt.gensalt() 
-        # Hashing the password 
-        hash = bcrypt.hashpw(bytes, salt) 
-        if bcrypt.checkpw(hash, hashedPassword.encode('utf-8')):
+        hash_bytes=hashedPassword.encode('utf-8')
+        if bcrypt.checkpw(bytes,hash_bytes):
             response = {
                 'status': 200,
                 'message': 'Login Success'
