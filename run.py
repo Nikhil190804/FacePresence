@@ -1,6 +1,6 @@
 import base64
 import bcrypt
-from flask import Flask,render_template,request,jsonify
+from flask import Flask,render_template,request,jsonify, send_from_directory
 import app.databaseConnection as dbconnect
 import face_recognition
 import pickle
@@ -226,6 +226,10 @@ def loginStudent():
             }
         
         return jsonify(response)
+    
+@app.route('/defaultImg.png')
+def default_image():
+    return send_from_directory('.', 'defaultImg.png')
 
 
 @app.route('/give-attendance',methods=['POST'])
