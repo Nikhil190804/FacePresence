@@ -203,7 +203,7 @@ def loginStudent():
     cursor.execute(f"Select * from students where email='{username}'")
     queryResult = cursor.fetchone()
     print(queryResult)
-    if(queryResult==()):
+    if(queryResult==None):
         response = {
         'status': 400,
         'message': 'Wrong Credentials'
