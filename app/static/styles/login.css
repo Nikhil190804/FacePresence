@@ -34,6 +34,7 @@ body {
     font-size: 2rem;
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .login-container h2 {
