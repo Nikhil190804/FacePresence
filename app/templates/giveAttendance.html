@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Capture</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/giveAttendance.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="video-capture-section">
+            <div class="video-container">
+                <label for="video" class="video-label">Live Camera Video</label>
+                <video id="video" autoplay ></video>
+            </div>
+            <div class="image-container">
+                <label for="captured-photo" class="image-label">Captured Image</label>
+                <img id="captured-photo" src="" alt="Captured Photo" >
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="capture-button">Capture Photo</button>
+        </div>
+        <div class="attendance-button">
+            <button id="attendance-button">Give Attendance</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='scripts/giveAttendance.js') }}"></script>
+</body>
+</html>
