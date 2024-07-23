@@ -87,6 +87,23 @@ def storeStudentDataInDB(first_name,last_name,email,phone,dob,password,faceEncod
 def login():
     return render_template('login.html')
 
+@app.route('/admin-login')
+def renderAdmin():
+    return render_template('admin.html')
+
+@app.route('/student-login')
+def renderStdudent():
+    return render_template('student.html')
+
+@app.route('/register-student')
+def renderRegisterStudent():
+    return render_template('register_student.html')
+
+
+@app.route('/attendance-page')
+def showAttendancePage():
+    return render_template('giveAttendance.html')
+
 #route for login as admin it checks the validity of admin and then sends the desired response
 @app.route('/login-admin',methods=["POST"])
 def loginAdmin():
@@ -109,17 +126,6 @@ def loginAdmin():
         }
         return jsonify(response)
 
-@app.route('/admin-login')
-def renderAdmin():
-    return render_template('admin.html')
-
-@app.route('/student-login')
-def renderStdudent():
-    return render_template('student.html')
-
-@app.route('/register-student')
-def renderRegisterStudent():
-    return render_template('register_student.html')
 
 # add student to database 
 @app.route('/student-register',methods=["POST"])
@@ -206,17 +212,6 @@ def loginStudent():
     else:
         #use hashing logic and then verify the password
         hashedPassword = queryResult[5] #the hashed password which is stored in db
-        """
-        Implement the hashing logic here and then send the desired response
-        if password does not match then send: response = {
-                                                'status': 400,
-                                                'message': 'Wrong Credentials'
-                                                } 
-        otherwise for a match send: response = {
-                                        'status': 200,
-                                        'message': 'Login Success'
-                                        }
-        """
         bytes = password.encode('utf-8') 
         hash_bytes=hashedPassword.encode('utf-8')
         if bcrypt.checkpw(bytes,hash_bytes):
@@ -231,6 +226,20 @@ def loginStudent():
             }
         
         return jsonify(response)
+
+
+@app.route('/give-attendance',methods=['POST'])
+def giveAttendance():
+    data = request.get_json()
+    image=data["image"]
+    """
+    NOW ADD ALGO STEP HERE
+    """
+    response = {
+                'status': 400,
+                'message': 'Function not done!'
+    }
+    return jsonify(response)
 
 
 # main driver function

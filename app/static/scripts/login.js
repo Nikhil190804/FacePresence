@@ -6,6 +6,10 @@ document.getElementById("customerLogin").addEventListener("click", function () {
     login("student");
 });
 
+document.getElementById("giveAttendance").addEventListener("click", ()=>{
+    window.location.href='/attendance-page';
+})
+
 async function login(role) {
     const username = document.getElementById("username").value;
     const pass = document.getElementById("pass").value;
